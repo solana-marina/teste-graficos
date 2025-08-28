@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Completo de Gráficos e Tabelas - SiMaPex</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-matrix@^1"></script>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; padding: 20px; color: #333; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+        .full-width { grid-column: 1 / -1; }
+        .chart-container, .table-container { padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1, h2 { text-align: center; color: #0056b3; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        thead { background-color: #f2f2f2; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        ul { margin: 0; padding-left: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Página de Teste dos Relatórios do SiMaPex</h1>
+    <hr>
+
+    <div class="grid">
+        <div class="chart-container">
+            <h2>Ações por Status</h2>
+            <canvas id="actionsByStatusChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h2>Produtos por Tipo</h2>
+            <canvas id="productsByTypeChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h2>Produção Mensal (Ano 2024)</h2>
+            <canvas id="monthlyProductionChart"></canvas>
+        </div>
+        <div class="chart-container">
+            <h2>Ações por Utilizador</h2>
+            <canvas id="actionsByUserChart"></canvas>
+        </div>
+        <div class="chart-container full-width">
+            <h2>Heatmap: Áreas Temáticas vs. Conhecimento</h2>
+            <canvas id="heatmapChart"></canvas>
+        </div>
+
+        <div class="table-container full-width">
+            <h2>Relatório Completo de Ações</h2>
+            <div id="fullActionReportTable"></div>
+        </div>
+        <div class="table-container full-width">
+            <h2>Relatório de Utilizadores</h2>
+            <div id="userReportTable"></div>
+        </div>
+        <div class="table-container full-width">
+            <h2>Acessos por URL</h2>
+            <div id="accessesByUrlTable"></div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
