@@ -1,6 +1,5 @@
 ### **Rastreamento de Endpoints de Análise para o Frontend**
 
-Aqui está o resumo de cada relatório que implementámos no backend:
 
 #### **1\. Ações por Status**
 
