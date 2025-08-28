@@ -38,7 +38,7 @@
   * municipality (Texto)  
   * unitId (Número)
 
-#### **4\. Ações por Utilizador (Ranking)**
+#### **4\. Ações por Utilizador**
 
 * **Endpoint:** GET /api/analyses/actions-by-user  
 * **Tipo de Relatório:** Gráfico ou Tabela  
