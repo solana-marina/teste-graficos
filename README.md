@@ -1,91 +1,124 @@
-### **Rastreamento de Endpoints de Análise para o Frontend**
+# Análise de Endpoints da API para o Frontend
 
+Este documento detalha os endpoints de análise disponíveis na API, os filtros que eles aceitam e sugestões de visualização para o frontend.
 
-#### **1\. Ações por Status**
+---
 
-* **Endpoint:** GET /api/analyses/actions-by-status  
-* **Tipo de Relatório:** Gráfico  
-* **Visualização Sugerida (Chart.js):** Gráfico de **Pizza** (Doughnut ou Pie) ou de **Barras** (Bar).  
-* **Filtros Disponíveis:**  
-  * startDate (Data)  
-  * endDate (Data)  
-  * municipality (Texto)  
-  * thematicArea (Enum)  
-  * knowledgeArea (Enum)  
-  * unitId (Número)
+### **1. Ações por Status**
 
-#### **2\. Produtos por Tipo**
+-   **Endpoint:** `GET /api/analyses/actions-by-status`
+-   **Tipo de Relatório:** Gráfico
+-   **Visualização Sugerida (Chart.js):** Gráfico de **Pizza** (`Doughnut` ou `Pie`) ou de **Barras** (`Bar`).
+-   **Filtros Disponíveis:**
+    -   `startDate` (Data)
+    -   `endDate` (Data)
+    -   `municipality` (Texto)
+    -   `thematicArea` (Enum)
+    -   `knowledgeArea` (Enum)
+    -   `unitId` (Número)
 
-* **Endpoint:** GET /api/analyses/products-by-type  
-* **Tipo de Relatório:** Gráfico  
-* **Visualização Sugerida (Chart.js):** Gráfico de **Barras** (Bar).   
-* **Filtros Disponíveis:**  
-  * startDate (Data)  
-  * endDate (Data)  
-  * municipality (Texto)  
-  * unitId (Número)  
-  * thematicArea (Enum)  
-  * knowledgeArea (Enum)
+---
 
-#### **3\. Heatmap de Áreas de Conhecimento vs. Temáticas**
+### **2. Produtos por Tipo**
 
-* **Endpoint:** GET /api/analyses/heatmap-thematic-knowledge  
-* **Tipo de Relatório:** Gráfico (Especial)  
-* **Visualização Sugerida (Chart.js):** Gráfico de **Matriz** (Matrix), que pode ser estilizado como um heatmap.  
-* **Filtros Disponíveis:**  
-  * startDate (Data)  
-  * endDate (Data)  
-  * municipality (Texto)  
-  * unitId (Número)
+-   **Endpoint:** `GET /api/analyses/products-by-type`
+-   **Tipo de Relatório:** Gráfico
+-   **Visualização Sugerida (Chart.js):** Gráfico de **Barras** (`Bar`).
+-   **Filtros Disponíveis:**
+    -   `startDate` (Data)
+    -   `endDate` (Data)
+    -   `municipality` (Texto)
+    -   `unitId` (Número)
+    -   `thematicArea` (Enum)
+    -   `knowledgeArea` (Enum)
 
-#### **4\. Ações por Utilizador**
+---
 
-* **Endpoint:** GET /api/analyses/actions-by-user  
-* **Tipo de Relatório:** Gráfico ou Tabela  
-* **Visualização Sugerida (Chart.js):** Gráfico de **Barras Horizontais** (Bar com a opção indexAxis: 'y').   
-* **Filtros Disponíveis:**  
-  * startDate (Data)  
-  * endDate (Data)  
-  * municipality (Texto)  
-  * unitId (Número)  
-  * thematicArea (Enum)  
-  * knowledgeArea (Enum)
+### **3. Heatmap: Áreas de Conhecimento vs. Temáticas**
 
-#### **5\. Produção Mensal**
+-   **Endpoint:** `GET /api/analyses/heatmap-thematic-knowledge`
+-   **Tipo de Relatório:** Gráfico (Especial)
+-   **Visualização Sugerida (Chart.js):** Gráfico de **Matriz** (`Matrix`), que pode ser estilizado como um heatmap.
+-   **Filtros Disponíveis:**
+    -   `startDate` (Data)
+    -   `endDate` (Data)
+    -   `municipality` (Texto)
+    -   `unitId` (Número)
 
-* **Endpoint:** GET /api/analyses/monthly-production  
-* **Tipo de Relatório:** Gráfico  
-* **Visualização Sugerida (Chart.js):** Gráfico de **Linha** (Line).   
-* **Filtros Disponíveis:**  
-  * year (Número, **obrigatório**)  
-  * unitId (Número)  
-  * municipality (Texto)
+---
 
-#### **6\. Acessos por URL**
+### **4. Ações por Utilizador**
 
-* **Endpoint:** GET /api/analyses/accesses-by-url  
-* **Tipo de Relatório:** Tabular  
-* **Visualização Sugerida:** Tabela.   
-* **Filtros Disponíveis:**  
-  * startDate (Data)  
-  * endDate (Data)
+-   **Endpoint:** `GET /api/analyses/actions-by-user`
+-   **Tipo de Relatório:** Gráfico ou Tabela
+-   **Visualização Sugerida (Chart.js):** Gráfico de **Barras Horizontais** (`Bar` com a opção `indexAxis: 'y'`).
+-   **Filtros Disponíveis:**
+    -   `startDate` (Data)
+    -   `endDate` (Data)
+    -   `municipality` (Texto)
+    -   `unitId` (Número)
+    -   `thematicArea` (Enum)
+    -   `knowledgeArea` (Enum)
 
-#### **7\. Relatório Tabular de Utilizadores**
+---
 
-* **Endpoint:** GET /api/analyses/user-report  
-* **Tipo de Relatório:** Tabular  
-* **Visualização Sugerida:** Tabela.   
-* **Filtros Disponíveis:**  
-  * unitId (Número)  
-  * municipality (Texto)
+### **5. Produção Mensal**
 
-#### **8\. Relatório Tabular Completo de Ações**
+-   **Endpoint:** `GET /api/analyses/monthly-production`
+-   **Tipo de Relatório:** Gráfico
+-   **Visualização Sugerida (Chart.js):** Gráfico de **Linha** (`Line`).
+-   **Filtros Disponíveis:**
+    -   `year` (Número, **obrigatório**)
+    -   `unitId` (Número)
+    -   `municipality` (Texto)
 
-* **Endpoint:** GET /api/analyses/full-action-report  
-* **Tipo de Relatório:** Tabular  
-* **Visualização Sugerida:** Tabela.  
-* **Filtros Disponíveis:**  
-  * unitId (Número)  
-  * thematicArea (Enum)  
-  * knowledgeArea (Enum)  
-  * municipality (Texto)
+---
+
+### **6. Acessos por URL**
+
+-   **Endpoint:** `GET /api/analyses/accesses-by-url`
+-   **Tipo de Relatório:** Tabular
+-   **Visualização Sugerida:** Tabela.
+-   **Filtros Disponíveis:**
+    -   `startDate` (Data)
+    -   `endDate` (Data)
+
+---
+
+### **7. Relatório Tabular de Utilizadores**
+
+-   **Endpoint:** `GET /api/analyses/user-report`
+-   **Tipo de Relatório:** Tabular
+-   **Visualização Sugerida:** Tabela.
+-   **Filtros Disponíveis:**
+    -   `unitId` (Número)
+    -   `municipality` (Texto)
+
+---
+
+### **8. Relatório Tabular Completo de Ações**
+
+-   **Endpoint:** `GET /api/analyses/full-action-report`
+-   **Tipo de Relatório:** Tabular
+-   **Visualização Sugerida:** Tabela.
+-   **Filtros Disponíveis:**
+    -   `unitId` (Número)
+    -   `thematicArea` (Enum)
+    -   `knowledgeArea` (Enum)
+    -   `municipality` (Texto)
+
+---
+
+### **9. Relatório de Impacto por Ação**
+
+-   **Endpoint:** `GET /api/analyses/impact-report`
+-   **Tipo de Relatório:** Híbrido (Gráfico e Tabular)
+-   **Descrição:** Retorna uma lista de ações, detalhando o número total de pessoas impactadas por ação (soma dos produtos) e a contribuição individual de cada produto.
+-   **Visualização Sugerida (Chart.js):** Gráfico de **Barras Empilhadas** (`Stacked Bar Chart`) e uma tabela detalhada.
+-   **Filtros Disponíveis:**
+    -   `startDate` (Data)
+    -   `endDate` (Data)
+    -   `municipality` (Texto)
+    -   `thematicArea` (Enum)
+    -   `knowledgeArea` (Enum)
+    -   `unitId` (Número)
